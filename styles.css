@@ -195,6 +195,13 @@ h4 {
     padding: 16px 0;
 }
 
+.continue-button:hover,
+.continue-button:active {
+    background-color: var(--light-royal-blue);
+    background-image: linear-gradient(to bottom, var(--light-slate-blue) 15%, var(--light-royal-blue) 95%);
+    cursor: pointer;
+}
+
 .attribution { 
     font-size: 11px; text-align: center; 
     display: none;
