@@ -1,0 +1,212 @@
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url(./assets/fonts/HankenGrotesk-VariableFont_wght.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+
+    /* primary */
+    --light-red: hsl(0, 100%, 67%);
+    --light-red-background: hsla(0, 100%, 67%, 5%);
+    --orangey-yellow: hsl(39, 100%, 56%);
+    --orangey-yellow-background: hsla(39, 100%, 56%, 5%);
+    --green-teal: hsl(166, 100%, 37%);
+    --green-teal-background: hsla(166, 100%, 37%, 5%);
+    --cobalt-blue: hsl(234, 85%, 45%);
+    --cobalt-blue-background: hsla(234, 85%, 45%, 5%);
+
+
+    /* gradients */
+    --light-slate-blue: hsla(252, 100%, 67%, 70%);
+    --light-royal-blue: hsl(241, 81%, 54%);
+    
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0.3);
+    --persian-blue-transparent: hsla(241, 72%, 46%, 0);
+    
+    /* neutral */
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsl(224, 30%, 27%);
+
+}
+
+body {
+    font-family: "Hanken Grotesk";
+    background-color: var(--white);
+    width: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+.component-results {
+    background-color: var(--light-royal-blue);
+    background-image: linear-gradient(to bottom, var(--light-slate-blue) 15%, var(--light-royal-blue) 95%);
+    border-radius: 0 0 30px 30px;
+    padding: 24px;
+}
+
+h3 {
+    color: var(--light-lavender);
+    opacity: 95%;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.component-results__score-final {
+    background-image: linear-gradient(to bottom, var(--violet-blue) 3%, var(--persian-blue) 75%, var(--persian-blue-transparent) 95%);
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    margin: 24px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    color: var(--white);
+    font-size: 56px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.component-results__score-final p {
+    color: var(--light-lavender);
+    opacity: 50%;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+}
+
+h2 {
+    color: var(--white);
+    font-size: 24px;
+    font-weight: 700;
+    margin: 8px 0;
+    text-align: center;
+}
+
+.component-results > p {
+    color: var(--light-lavender);
+    opacity: 85%;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 36px;
+    margin-bottom: 14px;
+    text-align: center;
+}
+
+.component-summary {
+    padding: 22px 30px;
+}
+
+h4 {
+    color: var(--dark-gray-blue);
+    font-size: 18px;
+    font-weight: 800;
+    margin: 2px;
+    margin-bottom: 24px;
+}
+
+.component-summary__blocks {
+    list-style-type: none;
+}
+
+.component-summary__blocks li {
+    padding: 0 16px;
+    margin: 16px 0;
+    border-radius: 8px;
+    line-height: 55px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.component-summary__blocks img,
+.component-summary__blocks p {
+    color: var(--dark-gray-blue);
+    font-size: 16px;
+    font-weight: 700;
+    display: inline;
+    vertical-align: middle;
+}
+
+.component-summary__reaction-block {
+    background-color: var(--light-red-background);
+}
+
+.component-summary__reaction p {
+    color: var(--light-red);
+    padding: 10px;
+}
+
+.component-summary__memory-block {
+    background-color: var(--orangey-yellow-background);
+}
+
+.component-summary__memory p {
+    color: var(--orangey-yellow);
+    padding: 10px;
+}
+
+.component-summary__verbal-block {
+    background-color: var(--green-teal-background);
+}
+
+.component-summary__verbal p {
+    color: var(--green-teal);
+    padding: 10px;
+}
+
+.component-summary__visual-block {
+    background-color: var(--cobalt-blue-background);
+}
+
+.component-summary__visual p {
+    color: var(--cobalt-blue);
+    padding: 10px;
+}
+
+.score-max {
+    opacity: 50%;
+    padding-left: 4px;
+}
+
+.continue-button {
+    background-color: var(--dark-gray-blue);
+    border-radius: 28px;
+    border: none;
+    color: var(--pale-blue);
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    margin: 8px 0;
+    padding: 16px 0;
+}
+
+.continue-button:hover,
+.continue-button:active {
+    background-color: var(--light-royal-blue);
+    background-image: linear-gradient(to bottom, var(--light-slate-blue) 15%, var(--light-royal-blue) 95%);
+    cursor: pointer;
+}
+
+.attribution { 
+    font-size: 11px; text-align: center; 
+    display: none;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
