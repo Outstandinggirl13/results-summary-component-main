@@ -147,7 +147,7 @@ h4 {
 
 .component-summary__reaction p {
     color: var(--light-red);
-    padding: 10px;
+    padding: 0 10px;
 }
 
 .component-summary__memory-block {
@@ -156,7 +156,7 @@ h4 {
 
 .component-summary__memory p {
     color: var(--orangey-yellow);
-    padding: 10px;
+    padding: 0 10px;
 }
 
 .component-summary__verbal-block {
@@ -165,7 +165,7 @@ h4 {
 
 .component-summary__verbal p {
     color: var(--green-teal);
-    padding: 10px;
+    padding: 0 10px;
 }
 
 .component-summary__visual-block {
@@ -174,7 +174,7 @@ h4 {
 
 .component-summary__visual p {
     color: var(--cobalt-blue);
-    padding: 10px;
+    padding: 0 10px;
 }
 
 .score-max {
@@ -209,4 +209,81 @@ h4 {
 
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+@media (min-width: 736px) {
+
+    body { 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
+        min-height: 100vh; 
+    }
+
+    main {
+        width: 736px;
+        display: flex;
+        flex-direction: row;
+        border-radius: 30px;
+        box-shadow: 15px 15px 40px var(--pale-blue);
+    }
+
+    .component-results, 
+    .component-summary {
+        width: 50%;
+    }
+
+    .component-results {
+        border-radius: 30px;
+        padding: 38px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+    
+    .component-results__score-final {
+        width: 200px;
+        height: 200px;
+        margin: 34px auto 28px;
+    }
+    
+    h1 {
+        font-size: 70px;
+        line-height: 80px;
+    }
+    
+    .component-results__score-final p {
+        font-size: 18px;
+    }
+    
+    h2 {
+        font-size: 32px;
+        margin: 14px 0;
+    }
+    
+    .component-results > p {
+        font-size: 18px;
+        margin: 14px 20px;
+    }
+
+    .component-summary {
+        padding: 38px 40px;
+    }
+    
+    h4 {
+        font-size: 24px;
+        margin-bottom: 28px;
+    }
+    
+    .component-summary__blocks img,
+    .component-summary__blocks p {
+        font-size: 18px;
+    }
+
+    .continue-button {
+        margin: 24px 0 0;
+    }
+    
 }
