@@ -21,7 +21,6 @@
     --cobalt-blue: hsl(234, 85%, 45%);
     --cobalt-blue-background: hsla(234, 85%, 45%, 5%);
 
-
     /* gradients */
     --light-slate-blue: hsla(252, 100%, 67%, 70%);
     --light-royal-blue: hsl(241, 81%, 54%);
@@ -52,13 +51,13 @@ main {
     background-color: var(--light-royal-blue);
     background-image: linear-gradient(to bottom, var(--light-slate-blue) 15%, var(--light-royal-blue) 95%);
     border-radius: 0 0 30px 30px;
-    padding: 24px;
+    padding: 1.5rem;
 }
 
 h3 {
     color: var(--light-lavender);
     opacity: 95%;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 800;
     text-align: center;
 }
@@ -66,9 +65,9 @@ h3 {
 .component-results__score-final {
     background-image: linear-gradient(to bottom, var(--violet-blue) 3%, var(--persian-blue) 75%, var(--persian-blue-transparent) 95%);
     border-radius: 50%;
-    width: 140px;
-    height: 140px;
-    margin: 24px auto;
+    width: 8.75rem;
+    height: 8.75rem;
+    margin: 1.5rem auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -76,7 +75,7 @@ h3 {
 
 h1 {
     color: var(--white);
-    font-size: 56px;
+    font-size: 3.5rem;
     font-weight: 800;
     text-align: center;
 }
@@ -84,39 +83,39 @@ h1 {
 .component-results__score-final p {
     color: var(--light-lavender);
     opacity: 50%;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     text-align: center;
 }
 
 h2 {
     color: var(--white);
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 700;
-    margin: 8px 0;
+    margin: 0.5rem 0;
     text-align: center;
 }
 
 .component-results > p {
     color: var(--light-lavender);
     opacity: 85%;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
-    margin: 0 36px;
-    margin-bottom: 14px;
+    margin: 0 2.25rem;
+    margin-bottom: 0.875rem;
     text-align: center;
 }
 
 .component-summary {
-    padding: 22px 30px;
+    padding: 1.375rem 1.875rem;
 }
 
 h4 {
     color: var(--dark-gray-blue);
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 800;
-    margin: 2px;
-    margin-bottom: 24px;
+    margin: 0.125rem;
+    margin-bottom: 1.5rem;
 }
 
 .component-summary__blocks {
@@ -124,10 +123,10 @@ h4 {
 }
 
 .component-summary__blocks li {
-    padding: 0 16px;
-    margin: 16px 0;
     border-radius: 8px;
-    line-height: 55px;
+    padding: 0 1rem;
+    margin: 1rem 0;
+    line-height: 3.4rem;
     display: flex;
     justify-content: space-between;
 }
@@ -135,7 +134,7 @@ h4 {
 .component-summary__blocks img,
 .component-summary__blocks p {
     color: var(--dark-gray-blue);
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 700;
     display: inline;
     vertical-align: middle;
@@ -147,7 +146,7 @@ h4 {
 
 .component-summary__reaction p {
     color: var(--light-red);
-    padding: 0 10px;
+    padding: 0 0.625rem;
 }
 
 .component-summary__memory-block {
@@ -156,7 +155,7 @@ h4 {
 
 .component-summary__memory p {
     color: var(--orangey-yellow);
-    padding: 0 10px;
+    padding: 0 0.625rem;
 }
 
 .component-summary__verbal-block {
@@ -165,7 +164,7 @@ h4 {
 
 .component-summary__verbal p {
     color: var(--green-teal);
-    padding: 0 10px;
+    padding: 0 0.625rem;
 }
 
 .component-summary__visual-block {
@@ -174,12 +173,12 @@ h4 {
 
 .component-summary__visual p {
     color: var(--cobalt-blue);
-    padding: 0 10px;
+    padding: 0 0.625rem;
 }
 
 .score-max {
     opacity: 50%;
-    padding-left: 4px;
+    padding-left: 0.25rem;
 }
 
 .continue-button {
@@ -188,11 +187,11 @@ h4 {
     border: none;
     color: var(--pale-blue);
     font-family: inherit;
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 600;
     width: 100%;
-    margin: 8px 0;
-    padding: 16px 0;
+    margin: 0.5rem 0;
+    padding: 1rem 0;
 }
 
 .continue-button:hover,
@@ -211,7 +210,7 @@ h4 {
     color: hsl(228, 45%, 44%); 
 }
 
-@media (min-width: 736px) {
+@media (min-width: 46rem) {
 
     body { 
         display: flex;
@@ -222,11 +221,11 @@ h4 {
     }
 
     main {
-        width: 736px;
-        display: flex;
-        flex-direction: row;
         border-radius: 30px;
         box-shadow: 15px 15px 40px var(--pale-blue);
+        width: 46rem;
+        display: flex;
+        flex-direction: row;
     }
 
     .component-results, 
@@ -236,54 +235,51 @@ h4 {
 
     .component-results {
         border-radius: 30px;
-        padding: 38px;
+        padding: 2.375rem;
     }
 
     h3 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
     
     .component-results__score-final {
-        width: 200px;
-        height: 200px;
-        margin: 34px auto 28px;
+        width: 12.5rem;
+        height: 12.5rem;
+        margin: 2.125rem auto 1.75rem;
     }
     
     h1 {
-        font-size: 70px;
-        line-height: 80px;
-    }
-    
-    .component-results__score-final p {
-        font-size: 18px;
+        font-size: 4.375rem;
+        line-height: 5rem;
     }
     
     h2 {
-        font-size: 32px;
-        margin: 14px 0;
+        font-size: 2rem;
+        margin: 0.875rem 0;
     }
     
     .component-results > p {
-        font-size: 18px;
-        margin: 14px 20px;
+        font-size: 1.125rem;
+        margin: 0.875rem 1.25rem;
     }
 
     .component-summary {
-        padding: 38px 40px;
+        padding: 2.375rem 2.5rem;
     }
     
     h4 {
-        font-size: 24px;
-        margin-bottom: 28px;
+        font-size: 1.5rem;
+        margin-bottom: 1.75rem;
     }
     
+    .component-results__score-final p,
     .component-summary__blocks img,
     .component-summary__blocks p {
-        font-size: 18px;
+        font-size: 1.125rem;
     }
 
     .continue-button {
-        margin: 24px 0 0;
+        margin: 1.5rem 0 0;
     }
     
 }
