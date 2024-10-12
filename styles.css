@@ -202,8 +202,9 @@ h4 {
 }
 
 .attribution { 
-    font-size: 11px; text-align: center; 
-    display: none;
+    font-size: 0.875rem;
+    padding: 0.5rem;
+    text-align: center;
 }
 
 .attribution a { 
@@ -282,4 +283,12 @@ h4 {
         margin: 1.5rem 0 0;
     }
     
+}
+
+@media (min-height: 35.5rem) and (min-width: 46rem) {
+    .attribution { 
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+    }
 }
