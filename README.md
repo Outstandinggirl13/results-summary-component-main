@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [HTML, CSS, and JS Implementation of a Results Summary Component]([https://your-solution-url.com](https://www.frontendmentor.io/solutions/html-css-and-js-implementation-of-a-results-summary-component-ZPHbHGyDwp)
 - Live Site URL: [GitHub Pages](https://outstandinggirl13.github.io/results-summary-component-main/)
 
 ## My process
