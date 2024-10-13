@@ -86,7 +86,7 @@ Only inline elements can be vertically aligned in their context using `vertical-
         justify-content: space-between;
     }
 ```
-First, you need to wrap the elements on the left, which include the image and paragraph, in one `<div>`, and the elements on the right, which consist of two paragraphs displaying the score, in another `<div>`. This ensures that space is evenly distributed between the two containers within the `<li>` item that hold those elements.
+To use this approach correctly, you need to wrap the elements on the left, which include the image and paragraph, in one `<div>`, and the elements on the right, which consist of two paragraphs displaying the score, in another `<div>`. This ensures that space is evenly distributed between the two containers within the `<li>` item that hold those elements.
 
 5. You can use a JSON with data to dynamically update the content on the page. The goal was to generate the following HTML code using JavaScript and data from the *data.json* file:
 
