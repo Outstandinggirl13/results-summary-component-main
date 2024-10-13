@@ -102,40 +102,36 @@
   ]
   console.log(json);
   const summaryBlocks = document.querySelector(".component-summary__blocks");
+
   const newBlock = document.createElement("li");
-  /* console.log(json[0].category); */
-  /* console.log(`${json[0].category}`); */
   newBlock.className += ` component-summary__${json[0].category.toLowerCase()}-block`;
-  /* console.log(newBlock); */
-  summaryBlocks.appendChild(newBlock);
 
-  /* newBlock.innerText = 'text'; */
   const newBlockContent1 = document.createElement("div");
-  const newBlockContent2 = document.createElement("div");
-
   newBlockContent1.className += ` component-summary__${json[0].category.toLowerCase()}`;
 
-  newBlock.appendChild(newBlockContent1);
-  newBlock.appendChild(newBlockContent2);
-
   const newIcon = document.createElement("img");
-  const newBlockName = document.createElement("p");
-
   newIcon.setAttribute("src", `${json[0].icon}`);
+  newIcon.setAttribute("alt", `${json[0].category.toLowerCase()}-icon`);
+
+  const newBlockName = document.createElement("p");
   newBlockName.innerText = `${json[0].category}`;
 
-  newBlockContent1.appendChild(newIcon);
-  newBlockContent1.appendChild(newBlockName);
+  const newBlockContent2 = document.createElement("div");
 
   const newScore = document.createElement("p");
-  const scoreMax = document.createElement("p");
-
   newScore.className += `score`;
-  scoreMax.className += `score-max`;
-
   newScore.innerText = `${json[0].score}`;
+
+  const scoreMax = document.createElement("p");
+  scoreMax.className += `score-max`;
   scoreMax.innerText = ` / 100`;
 
+
+  summaryBlocks.appendChild(newBlock);
+  newBlock.appendChild(newBlockContent1);
+  newBlock.appendChild(newBlockContent2);
+  newBlockContent1.appendChild(newIcon);
+  newBlockContent1.appendChild(newBlockName);
   newBlockContent2.appendChild(newScore);
   newBlockContent2.appendChild(scoreMax);
 
