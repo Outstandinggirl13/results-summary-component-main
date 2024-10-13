@@ -1,97 +1,166 @@
-# Frontend Mentor - Results summary component
+# Frontend Mentor - Results summary component solution
 
-![Design preview for the Results summary component coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Results summary component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/results-summary-component-CE_K6s0maV). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+## Overview
 
-## The challenge
+### The challenge
 
-Your challenge is to build out this results summary component and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-We provide the data for the results in a local `data.json` file. So you can use that to add the results and total score dynamically if you choose.
-
-Your users should be able to:
+Users should be able to:
 
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 - **Bonus**: Use the local JSON data to dynamically populate the content
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](./assets/images/desktop-screenshot.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [GitHub Pages](https://outstandinggirl13.github.io/results-summary-component-main/)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+### Built with
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- JS
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### What I learned
 
-## Building your project
+Throughout this project, I had the chance to acquire several important skills. I learned the following features:
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+1. To center all the content of the `<body>` on the screen using Flexbox, I implemented the following code (an experienced learner from Frontend Mentor shared this tip with me — many thanks if you're reading this):
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```css 
+    body { 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      min-height: 100vh; 
+    }
+```
 
-## Deploying your project
+2. To center text horizontally within a block-level element, you simply need to apply a single CSS property to the block-level element, in this case to `<h1>` element:
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+```css
+    h1 {
+      text-align: center;
+    }
+```
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+3. To vertically align elements inside an `<li>` item, one effective method is to change the display property of all elements to inline and then apply `vertical-align: middle` to each of them:
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+```css
+    .component-summary__blocks img,
+    .component-summary__blocks p {
+        display: inline;
+        vertical-align: middle;
+    }
+```
+Only inline elements can be vertically aligned in their context using `vertical-align: middle`. The context refers to the height of the text line they occupy.
 
-## Create a custom `README.md`
+4. When positioning elements inside a container (in this case `<li>` item), you can use Flexbox to ensure that the icon image and block name are aligned to the left, while the score is positioned to the right.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```css
+    .component-summary__blocks li {
+        display: flex;
+        justify-content: space-between;
+    }
+```
+First, you need to wrap the elements on the left, which include the image and paragraph, in one `<div>`, and the elements on the right, which consist of two paragraphs displaying the score, in another `<div>`. This ensures that space is evenly distributed between the two containers within the `<li>` item that hold those elements.
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+5. You can use a JSON with data to dynamically update the content on the page. The goal was to generate the following HTML code using JavaScript and data from the *data.json* file:
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+```html
+        <li class="component-summary__reaction-block">
+          <div class="component-summary__reaction">
+            <img src="./assets/images/icon-reaction.svg" alt="Reaction icon">
+            <p class="block-name">Reaction</p>
+          </div>
+          <div>
+            <p>80</p>
+            <p class="score-max"> / 100</p>
+          </div>
+        </li>
+        <li class="component-summary__memory-block">
+          <div class="component-summary__memory">
+            <img src="./assets/images/icon-memory.svg" alt="Memory icon">
+            <p class="block-name">Memory</p>
+          </div>
+          <div>
+            <p>92</p>
+            <p class="score-max"> / 100</p>
+          </div>
+        </li>
+        <li class="component-summary__verbal-block">
+          <div class="component-summary__verbal">
+            <img src="./assets/images/icon-verbal.svg" alt="Verbal icon">
+            <p class="block-name">Verbal</p>
+          </div>
+          <div>
+            <p>61</p>
+            <p class="score-max"> / 100</p>
+          </div>
+        </li>
+        <li class="component-summary__visual-block">
+          <div class="component-summary__visual">
+            <img src="./assets/images/icon-visual.svg" alt="Visual icon">
+            <p class="block-name">Visual</p>
+          </div>
+          <div>
+            <p>72</p>
+            <p class="score-max"> / 100</p>
+          </div>
+        </li>
+```
 
-## Submitting your solution
+One of the issues I encountered was an error while testing the following JavaScript code:
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+```js
+    fetch("data.json")
+      .then(response => response.json())
+      .then(json => {/*code snippet*/})
+```
+It turned out that I cannot fetch data directly from the local *.json* file and view it in my browser. One solution to this issue is to install a web server on your local PC, which is what I did (I installed the Live Server extension by Ritwick Dey in VSCode and used it). 
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+At the end of this README.md, you will find a collection of resources that helped me understand what JSON is and how to use it.
 
-## Sharing your solution
+The provided *.json* file was structured as an array, so I iterated over its elements using the `forEach()` method. Each element is an object containing three key-value pairs that hold information about the category, score, and icon. I utilized this data to create the structure of `<li>` elements in the *index.html* for each object.
 
-There are multiple places you can share your solution:
+Essentially, the development flow involved creating a new element, assigning a class to it so that the styles defined in the styles.css file would be applied, and, if necessary, modifying the text content or adding attributes. Then, the new elements were gradually added to the index.html file.
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+This is my first implemented script that dynamically loads data via JSON, and to be honest, it feels cumbersome. I will be looking for ways to improve it.
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+### Useful resources
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+- [Learn JSON in 25 Minutes | Complete JSON Crash Course | JSON Tutorial for Beginners](https://www.youtube.com/watch?v=6OhMbf2v_jI) - A nice introductory video that explains JSON for those new to the topic.
 
-## Got feedback for us?
+- [JSON Placeholder](https://jsonplaceholder.typicode.com/) - A handy tool for experimenting with JSON.
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+- ["Cross origin requests are only supported for HTTP." error](https://stackoverflow.com/questions/10752055/cross-origin-requests-are-only-supported-for-http-error-when-loading-a-local) - How to manage a fetching error while loading a *.json* file.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+- [Working with JSON - MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
 
-**Have fun building!** 🚀
+## Author
+
+- Website - [Outstandinggirl13](https://github.com/Outstandinggirl13)
+- Frontend Mentor - [@Outstandinggirl13](https://www.frontendmentor.io/profile/Outstandinggirl13)
