@@ -2,6 +2,7 @@ fetch("data.json")
 .then(response => response.json())
 .then(json => {
   json.forEach(block => {
+    
     const summaryBlocks = document.querySelector(".component-summary__blocks");
 
     const newBlock = document.createElement("li");
@@ -28,11 +29,14 @@ fetch("data.json")
     scoreMax.textContent = ` / 100`;
 
     summaryBlocks.appendChild(newBlock);
+
     newBlock.appendChild(newBlockContent1);
-    newBlock.appendChild(newBlockContent2);
     newBlockContent1.appendChild(newIcon);
     newBlockContent1.appendChild(newBlockName);
+
+    newBlock.appendChild(newBlockContent2);
     newBlockContent2.appendChild(newScore);
     newBlockContent2.appendChild(scoreMax);
+
   })
 })
