@@ -153,11 +153,8 @@ This is my first implemented script that dynamically loads data via JSON, and to
 ### Useful resources
 
 - [Learn JSON in 25 Minutes | Complete JSON Crash Course | JSON Tutorial for Beginners](https://www.youtube.com/watch?v=6OhMbf2v_jI) - A nice introductory video that explains JSON for those new to the topic.
-
 - [JSON Placeholder](https://jsonplaceholder.typicode.com/) - A handy tool for experimenting with JSON.
-
 - ["Cross origin requests are only supported for HTTP." error](https://stackoverflow.com/questions/10752055/cross-origin-requests-are-only-supported-for-http-error-when-loading-a-local) - How to manage a fetching error while loading a *.json* file.
-
 - [Working with JSON - MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
 
 ## Author
