@@ -12,7 +12,7 @@ fetch("data.json")
 
     const newIcon = document.createElement("img");
     newIcon.setAttribute("src", `${block.icon}`);
-    newIcon.setAttribute("alt", `${block.category.toLowerCase()}-icon`);
+    newIcon.setAttribute("alt", `${block.category} icon`);
 
     const newBlockName = document.createElement("p");
     newBlockName.className += `block-name`;
