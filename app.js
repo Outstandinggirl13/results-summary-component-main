@@ -15,12 +15,12 @@ fetch("data.json")
     newIcon.setAttribute("alt", `${block.category.toLowerCase()}-icon`);
 
     const newBlockName = document.createElement("p");
+    newBlockName.className += `block-name`;
     newBlockName.textContent = `${block.category}`;
 
     const newBlockContent2 = document.createElement("div");
 
     const newScore = document.createElement("p");
-    newScore.className += `score`;
     newScore.textContent = `${block.score}`;
 
     const scoreMax = document.createElement("p");
