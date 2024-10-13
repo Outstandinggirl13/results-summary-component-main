@@ -11,12 +11,9 @@ This is a solution to the [Results summary component challenge on Frontend Mento
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -30,20 +27,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](./assets/images/desktop-screenshot.png)
 
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [GitHub Pages](https://outstandinggirl13.github.io/results-summary-component-main/)
 
 ## My process
 
@@ -52,61 +41,126 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
-- Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- JS
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+Throughout this project, I had the chance to acquire several important skills. I learned the following features:
 
-To see how you can add code snippets, see below:
+1. To center all the content of the `<body>` on the screen using Flexbox, I implemented the following code (an experienced learner from Frontend Mentor shared this tip with me — many thanks if you're reading this):
+
+```css 
+    body { 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+      min-height: 100vh; 
+    }
+```
+
+2. To center text horizontally within a block-level element, you simply need to apply a single CSS property to the block-level element, in this case to `<h1>` element:
+
+```css
+    h1 {
+      text-align: center;
+    }
+```
+
+3. To vertically align elements inside an `<li>` item, one effective method is to change the display property of all elements to inline and then apply `vertical-align: middle` to each of them:
+
+```css
+    .component-summary__blocks img,
+    .component-summary__blocks p {
+        display: inline;
+        vertical-align: middle;
+    }
+```
+Only inline elements can be vertically aligned in their context using `vertical-align: middle`. The context refers to the height of the text line they occupy.
+
+4. When positioning elements inside a container (in this case `<li>` item), you can use Flexbox to ensure that the icon image and block name are aligned to the left, while the score is positioned to the right.
+
+```css
+    .component-summary__blocks li {
+        display: flex;
+        justify-content: space-between;
+    }
+```
+First, you need to wrap the elements on the left, which include the image and paragraph, in one `<div>`, and the elements on the right, which consist of two paragraphs displaying the score, in another `<div>`. This ensures that space is evenly distributed between the two containers within the `<li>` item that hold those elements.
+
+5. You can use a JSON with data to dynamically update the content on the page. The goal was to generate the following HTML code using JavaScript and data from the *data.json* file:
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+        <li class="component-summary__reaction-block">
+          <div class="component-summary__reaction">
+            <img src="./assets/images/icon-reaction.svg" alt="Reaction icon">
+            <p class="block-name">Reaction</p>
+          </div>
+          <div>
+            <p>80</p>
+            <p class="score-max"> / 100</p>
+          </div>
+        </li>
+        <li class="component-summary__memory-block">
+          <div class="component-summary__memory">
+            <img src="./assets/images/icon-memory.svg" alt="Memory icon">
+            <p class="block-name">Memory</p>
+          </div>
+          <div>
+            <p>92</p>
+            <p class="score-max"> / 100</p>
+          </div>
+        </li>
+        <li class="component-summary__verbal-block">
+          <div class="component-summary__verbal">
+            <img src="./assets/images/icon-verbal.svg" alt="Verbal icon">
+            <p class="block-name">Verbal</p>
+          </div>
+          <div>
+            <p>61</p>
+            <p class="score-max"> / 100</p>
+          </div>
+        </li>
+        <li class="component-summary__visual-block">
+          <div class="component-summary__visual">
+            <img src="./assets/images/icon-visual.svg" alt="Visual icon">
+            <p class="block-name">Visual</p>
+          </div>
+          <div>
+            <p>72</p>
+            <p class="score-max"> / 100</p>
+          </div>
+        </li>
 ```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+
+One of the issues I encountered was an error while testing the following JavaScript code:
+
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+    fetch("data.json")
+      .then(response => response.json())
+      .then(json => {/*code snippet*/})
 ```
+It turned out that I cannot fetch data directly from the local *.json* file and view it in my browser. One solution to this issue is to install a web server on your local PC, which is what I did (I installed the Live Server extension by Ritwick Dey in VSCode and used it). 
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+At the end of this README.md, you will find a collection of resources that helped me understand what JSON is and how to use it.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+The provided *.json* file was structured as an array, so I iterated over its elements using the `forEach()` method. Each element is an object containing three key-value pairs that hold information about the category, score, and icon. I utilized this data to create the structure of `<li>` elements in the *index.html* for each object.
 
-### Continued development
+Essentially, the development flow involved creating a new element, assigning a class to it so that the styles defined in the styles.css file would be applied, and, if necessary, modifying the text content or adding attributes. Then, the new elements were gradually added to the index.html file.
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+This is my first implemented script that dynamically loads data via JSON, and to be honest, it feels cumbersome. I will be looking for ways to improve it.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Learn JSON in 25 Minutes | Complete JSON Crash Course | JSON Tutorial for Beginners](https://www.youtube.com/watch?v=6OhMbf2v_jI) - A nice introductory video that explains JSON for those new to the topic.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [JSON Placeholder](https://jsonplaceholder.typicode.com/) - A handy tool for experimenting with JSON.
+
+- ["Cross origin requests are only supported for HTTP." error](https://stackoverflow.com/questions/10752055/cross-origin-requests-are-only-supported-for-http-error-when-loading-a-local) - How to manage a fetching error while loading a *.json* file.
+
+- [Working with JSON - MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Website - [Outstandinggirl13](https://github.com/Outstandinggirl13)
+- Frontend Mentor - [@Outstandinggirl13](https://www.frontendmentor.io/profile/Outstandinggirl13)
