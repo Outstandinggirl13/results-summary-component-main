@@ -35,7 +35,6 @@
             <p class="score-max"> / 100</p>
           </div>
         </li>
-        -->
         <li class="component-summary__memory-block">
           <div class="component-summary__memory">
             <img src="./assets/images/icon-memory.svg" alt="Brain icon">
@@ -66,6 +65,7 @@
             <p class="score-max"> / 100</p>
           </div>
         </li>
+        -->
       </ul>
       <button class="continue-button">Continue</button>
     </section>
@@ -78,73 +78,44 @@
   </footer>
 
   <script>
-    const json = [
-    {
-      "category": "Reaction",
-      "score": 80,
-      "icon": "./assets/images/icon-reaction.svg"
-    },
-    {
-      "category": "Memory",
-      "score": 92,
-      "icon": "./assets/images/icon-memory.svg"
-    },
-    {
-      "category": "Verbal",
-      "score": 61,
-      "icon": "./assets/images/icon-verbal.svg"
-    },
-    {
-      "category": "Visual",
-      "score": 72,
-      "icon": "./assets/images/icon-visual.svg"
-    }
-  ]
-  console.log(json);
-  const summaryBlocks = document.querySelector(".component-summary__blocks");
-
-  const newBlock = document.createElement("li");
-  newBlock.className += ` component-summary__${json[0].category.toLowerCase()}-block`;
-
-  const newBlockContent1 = document.createElement("div");
-  newBlockContent1.className += ` component-summary__${json[0].category.toLowerCase()}`;
-
-  const newIcon = document.createElement("img");
-  newIcon.setAttribute("src", `${json[0].icon}`);
-  newIcon.setAttribute("alt", `${json[0].category.toLowerCase()}-icon`);
-
-  const newBlockName = document.createElement("p");
-  newBlockName.innerText = `${json[0].category}`;
-
-  const newBlockContent2 = document.createElement("div");
-
-  const newScore = document.createElement("p");
-  newScore.className += `score`;
-  newScore.innerText = `${json[0].score}`;
-
-  const scoreMax = document.createElement("p");
-  scoreMax.className += `score-max`;
-  scoreMax.innerText = ` / 100`;
-
-
-  summaryBlocks.appendChild(newBlock);
-  newBlock.appendChild(newBlockContent1);
-  newBlock.appendChild(newBlockContent2);
-  newBlockContent1.appendChild(newIcon);
-  newBlockContent1.appendChild(newBlockName);
-  newBlockContent2.appendChild(newScore);
-  newBlockContent2.appendChild(scoreMax);
-
-/*     fetch("data.json")
+    fetch("data.json")
     .then(response => response.json())
     .then(json => {
-      console.log(json);
       json.forEach(block => {
-        console.log(block.category);
-        console.log(block.score);
-        console.log(block.icon);
-      });
-    }) */
+        const summaryBlocks = document.querySelector(".component-summary__blocks");
+
+        const newBlock = document.createElement("li");
+        newBlock.className += ` component-summary__${block.category.toLowerCase()}-block`;
+
+        const newBlockContent1 = document.createElement("div");
+        newBlockContent1.className += ` component-summary__${block.category.toLowerCase()}`;
+
+        const newIcon = document.createElement("img");
+        newIcon.setAttribute("src", `${block.icon}`);
+        newIcon.setAttribute("alt", `${block.category.toLowerCase()}-icon`);
+
+        const newBlockName = document.createElement("p");
+        newBlockName.textContent = `${block.category}`;
+
+        const newBlockContent2 = document.createElement("div");
+
+        const newScore = document.createElement("p");
+        newScore.className += `score`;
+        newScore.textContent = `${block.score}`;
+
+        const scoreMax = document.createElement("p");
+        scoreMax.className += `score-max`;
+        scoreMax.textContent = ` / 100`;
+
+        summaryBlocks.appendChild(newBlock);
+        newBlock.appendChild(newBlockContent1);
+        newBlock.appendChild(newBlockContent2);
+        newBlockContent1.appendChild(newIcon);
+        newBlockContent1.appendChild(newBlockName);
+        newBlockContent2.appendChild(newScore);
+        newBlockContent2.appendChild(scoreMax);
+      })
+    })
   </script>
 </body>
 </html>
