@@ -39,12 +39,14 @@
 
 body {
     font-family: "Hanken Grotesk";
-    background-color: var(--white);
+    background-color: var(--pale-blue);
     width: 100%;
 }
 
 main {
     width: 100%;
+    background-color: var(--white);
+    box-shadow: 15px 35px 40px var(--light-royal-blue);
 }
 
 .component-results {
